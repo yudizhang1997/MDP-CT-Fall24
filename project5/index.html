@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P1 - Plaid Patterns</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BioRhyme+Expanded:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 200;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #222;
+            font-family: 'BioRhyme Expanded', serif;
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        h1 + p {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        h3 {
+            color: #901aff;
+            font-family: 'BioRhyme', serif;
+            font-weight: 300;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        h4 {
+            font-family: 'BioRhyme Expanded', serif;
+            font-weight: 300;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: #444;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .designer {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .images-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .images-container img {
+            width: calc(46% - 15px);
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f1f1f1;
+            font-size: 0.9rem;
+            color: #777;
+            border-top: 1px solid #ddd;
+        }
+
+        @media (max-width: 600px) {
+            .images-container img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Digital Materialities</h1>
+        <p class="designer">yudi zhang | shadertoy | project 5 | fall 2024</p>
+
+        <h3>1st Shader Practice: Plaid Pattern</h3>
+
+        <h4>Core Concept</h4>
+        <p>The plaid pattern is a combination of horizontal and vertical stripes that can be superimposed using a mathematical formula.</p>
+
+        <h4>Practices & Code</h4>
+        <p>Use <code>sin</code> or <code>step</code> functions to generate stripes in the horizontal and vertical directions and combine them into a grid.</p>
+
+        <div class="images-container">
+            <img src="pp1.png" alt="Plaid Pattern 1">
+            <img src="pp1c.png" alt="Plaid Pattern 1 Code">
+            <img src="pp2.png" alt="Plaid Pattern 2">
+            <img src="pp2c.png" alt="Plaid Pattern 2 Code">
+            <img src="pp3.gif" alt="Plaid Pattern Animation">
+            <img src="pp3c.png" alt="Plaid Pattern 3 Code">
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Yudi Zhang. All Rights Reserved. | Shader Practice | Fall 2024</p>
+    </footer>
+</body>
+</html>

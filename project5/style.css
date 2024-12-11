@@ -1,0 +1,67 @@
+.container {
+    max-width: 800px; /* 设置最大宽度 */
+    margin: auto; /* 居中显示 */
+    padding: 20px;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    width: 100%; /* 视频容器占满容器宽度 */
+    max-width: 800px; /* 视频容器最大宽度与.container一致 */
+    margin-top: 20px; /* 图片与视频之间的间隙 */
+}
+
+.video-container video {
+    width: 100%; /* 视频宽度占满视频容器宽度 */
+    height: auto; /* 高度自动调整以保持纵横比 */
+}
+
+
+h1 {
+    color: black;
+    font-family: 'Biorhyme Expanded', serif; /* Biorhyme font for all headings */
+    font-weight: 400; /* Font weight set to 400 */
+    text-align: center; /* Center align the h1 text */
+}
+
+h1 + p {
+    text-align: center; /* Center-align the paragraph directly following h1 */
+    margin-top: 40px; /* Optional: Adds spacing above the paragraph */
+    margin-bottom: 20px; /* Optional: Adds spacing below the paragraph */
+}
+
+h3 {
+    font-family: 'Biorhyme', serif; /* Set Biorhyme as the font family */
+    font-weight: 400; /* Font weight is set to 400 */
+    color: black; /* Optional: setting the color of the headings to black */
+}
+
+.biorhyme-light {
+  font-family: "BioRhyme", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+.biorhyme-expanded-light {
+    font-family: "BioRhyme Expanded", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+.biorhyme-expanded-regular {
+    font-family: "BioRhyme Expanded", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.montserrat-light {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+  
