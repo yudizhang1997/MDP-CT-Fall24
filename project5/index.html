@@ -16,13 +16,13 @@
             font-weight: 200;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            line-height: 1.8;
         }
 
         .container {
             max-width: 900px;
-            margin: 20px auto;
-            padding: 20px;
+            margin: 30px auto;
+            padding: 25px;
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -33,7 +33,7 @@
             font-family: 'BioRhyme Expanded', serif;
             font-weight: 400;
             text-align: center;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         h1 + p {
@@ -48,7 +48,7 @@
             color: #901aff;
             font-family: 'BioRhyme', serif;
             font-weight: 300;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             font-size: 1.4rem;
         }
 
@@ -69,18 +69,23 @@
         .designer {
             border-bottom: 1px solid #eee;
             padding-bottom: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
+        .section {
+            margin-bottom: 30px;
         }
 
         .images-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 20px;
             justify-content: center;
+            margin-top: 15px;
         }
 
         .images-container img {
-            width: calc(46% - 15px);
+            width: calc(46% - 20px);
             height: auto;
             border: 1px solid #ddd;
             border-radius: 8px;
@@ -109,13 +114,31 @@
         <h1>Digital Materialities</h1>
         <p class="designer">yudi zhang | shadertoy | project 5 | fall 2024</p>
 
-        <h3>1st Shader Practice: Plaid Pattern</h3>
+        <div class="section">
+            <h4>Learning Process</h4>
+            <p>[What is GLSL?]</p>
+            <p>GLSL stands for OpenGL Shading Language, a high-level programming language used to control the graphics pipeline in OpenGL.</p>
 
-        <h4>Core Concept</h4>
-        <p>The plaid pattern is a combination of horizontal and vertical stripes that can be superimposed using a mathematical formula.</p>
+            <p>[What is shader?]</p>
+            <p>Shaders are also a set of instructions, but the instructions are executed all at once for every single pixel on the screen. That means the code you write has to behave differently depending on the position of the pixel on the screen. Like a type press, your program will work as a function that receives a position and returns a color, and when it's compiled it will run extraordinarily fast.</p>
 
-        <h4>Practices & Code</h4>
-        <p>Use <code>sin</code> or <code>step</code> functions to generate stripes in the horizontal and vertical directions and combine them into a grid.</p>
+            <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 200;">Shader Practice: Plaid Pattern</h3>
+
+            <h4>Core Steps</h4>
+            <ul>
+                <li>Set up Colors</li>
+                <li>Use <code>sin</code> or <code>step</code> functions to generate stripes</li>
+                <li>Dynamic changes are controlled by <code>iTime</code></li>
+                <li>Make color overlay to combine different patterns</li>
+            </ul>
+
+            <h4>Reference</h4>
+            <p><a href="https://youtu.be/ortzpkWFJfo?si=xO64jszNdLkIMCV5" target="_blank">Youtube: #curiouslyminded s03e1 Playing with Patterns — 25.10.2023</a></p>
+            <p><a href="https://thebookofshaders.com/" target="_blank">The book of shaders</a></p>
+
+            <h4>Practices & Code</h4>
+            <p>Below are some practice results:</p>
+        </div>
 
         <div class="images-container">
             <img src="pp1.png" alt="Plaid Pattern 1">
@@ -124,11 +147,66 @@
             <img src="pp2c.png" alt="Plaid Pattern 2 Code">
             <img src="pp3.gif" alt="Plaid Pattern Animation">
             <img src="pp3c.png" alt="Plaid Pattern 3 Code">
+            <img src="pp4.gif" alt="Plaid Pattern Animation">
+            <img src="pp4c.png" alt="Plaid Pattern 4 Code">
+            <img src="pp5.gif" alt="Plaid Pattern Animation">
+            <img src="pp5c.png" alt="Plaid Pattern 5 Code">
+            <img src="pp6.gif" alt="Plaid Pattern Animation">
+            <img src="pp6c.png" alt="Plaid Pattern 6 Code">
+            <img src="pp7.gif" alt="Plaid Pattern Animation">
+            <img src="pp7c.png" alt="Plaid Pattern 7 Code">
+            <img src="pp8.gif" alt="Plaid Pattern Animation">
+            <img src="pp8c.png" alt="Plaid Pattern 8 Code">
         </div>
+
+        <div class="section">
+            <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 200;">Shader Practice:  Waves and Noise</h3>
+            <h4>Core Steps</h4>
+            <ul>
+                <li>Set up Colors</li>
+                <li>Use <code>sin</code> or <code>step</code> functions to generate stripes</li>
+                <li>Dynamic changes are controlled by <code>iTime</code></li>
+                <li>Make color overlay to combine different patterns</li>
+            </ul>
+
+            <h4>Practices & Code</h4>
+            <p>Below are some practice results:</p>
+        </div>
+
+
+         <div class="images-container">   
+            <img src="11.gif" alt="Plaid Pattern Animation">
+            <img src="11c.png" alt="Plaid Pattern 8 Code">
+            <img src="22.gif" alt="Plaid Pattern Animation">
+            <img src="22c.png" alt="Plaid Pattern 8 Code">
+            <img src="33.gif" alt="Plaid Pattern Animation">
+            <img src="33c.png" alt="Plaid Pattern 8 Code">
+            <img src="44.gif" alt="Plaid Pattern Animation">
+            <img src="44c.png" alt="Plaid Pattern 8 Code">
+        </div>
+
+        <div class="section">
+            <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 200;">Shader Practice:  Pattern</h3>
+            <h4>Core Steps</h4>
+            <ul>
+                <li>Set up Colors</li>
+                <li>Use <code>sin</code> or <code>step</code> functions to generate stripes</li>
+                <li>Dynamic changes are controlled by <code>iTime</code></li>
+                <li>Make color overlay to combine different patterns</li>
+            </ul>
+
+            <h4>Reference</h4>
+            <p><a href="https://youtu.be/ortzpkWFJfo?si=xO64jszNdLkIMCV5" target="_blank">Video Reference</a></p>
+
+            <h4>Practices & Code</h4>
+            <p>Below are some practice results:</p>
+        </div>
+
+        
     </div>
 
     <footer>
-        <p>&copy; 2024 Yudi Zhang. All Rights Reserved. | Shader Practice | Fall 2024</p>
+        <p>&copy; 2024 Yudi Zhang. | Instructed by Maxim | At Media Design Practices</p>
     </footer>
 </body>
 </html>
