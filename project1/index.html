@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>P1 - Plaid Patterns</title>
+    <title>P1 2024 Fall</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=BioRhyme+Expanded:wght@300;400&display=swap" rel="stylesheet">
@@ -76,12 +76,19 @@
             margin-bottom: 30px;
         }
 
+        .divider {
+            border: none;
+            border-top: 2px dashed #901aff;
+            margin: 50px 0; /* 增大了顶部和底部的间隔 */
+        }
+
         .images-container {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
             margin-top: 15px;
+            margin-bottom: 30px; /* 增加图片下方的间距 */
         }
 
         .images-container img,
@@ -119,15 +126,14 @@
         <div class="section">
             <h4>Introduction</h4>
             <p>I am trying to do some <code>Interactive Visual MIDI Experience.</code></p>
-            <p>This project explores the creative potential of interactive technology by utilizing the <code>Web MIDI API and the p5.js library</code>. Inspired by dynamic audio-visual experiences, the goal was to map MIDI keyboard inputs to colorful 3D visualizations. These interactions create an engaging and immersive experience where sound transforms into vibrant motion.</p>
-            <h4>Inspirations</h4>
-            <p><a href="https://youtu.be/Zx_5ROZm21E?si=YNW8vMEF7L27jFCh" target="_blank">Pianocktail</a></p>
+            <p>Inspiration: <a href="https://youtu.be/Zx_5ROZm21E?si=YNW8vMEF7L27jFCh" target="_blank">Pianocktail</a></p>
+            <p>I want to explores the creative potential of interactive technology by utilizing the <code>Web MIDI API and the p5.js library</code>. Inspired by dynamic audio-visual experiences, the goal was to map MIDI keyboard inputs to colorful 3D visualizations. These interactions create an engaging and immersive experience where sound transforms into vibrant motion.</p>
 
-            <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 200;">1st Attempt</h3>
+            <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 200;">Work Process</h3>
 
             <h4>Core Parts</h4>
             <ul>
-                <li><strong>MIDI Keyboard:</strong> Acts as the input device to trigger visual effects.</li>
+                <li><strong>MIDI Keyboard - YAMAHA P255:</strong> My equipment and it acts as the input device to trigger visual effects.</li>
                 <li><strong>Web MIDI API:</strong> Facilitates communication between the MIDI keyboard and the browser.</li>
                 <li><strong>p5.js Visualization:</strong> Maps MIDI input to 3D animated bars that respond dynamically.</li>
             </ul>
@@ -146,10 +152,34 @@
             <div class="images-container">
                 <img src="pv.gif" alt="image">
                 <video src="iv.mp4" controls></video>
-            </div>               
-
-
+            </div>
         </div>
+
+        <div class="divider"></div>
+
+        <div class="section">
+            <h4 style="font-family: 'Montserrat', sans-serif; font-weight: 800;"> * Documentation For Attempt In Touchdesigner * </h4>
+            <p>Before I moved to p5js, I spent a long time and tried to do this audio interaction in touchdesigner.</p>
+            <p>I used SOP line and copy to draw 88 lines for each keys, and tried to use CHOP MIDI IN MAP and CHOP MIDI IN, but I can not get it work.</p>
+            <h4 style="font-family: 'Montserrat', sans-serif; font-weight: 200;">Work Process</h4>
+            <ul>
+                <li><strong>CHOP - MIDI IN MAP</strong> I tried MIDI IN MAP first, but it can not connect as I want. Although I make sure my keyboard works good in MIDI Mapper.</li>
+                <div class="images-container">
+                    <img src="td1.png" alt="image">
+                    <img src="mm.png" alt="image">
+                </div>
+                <li><strong>CHOP - MIDI IN:</strong> In order to avoid the MATH error, I tried to use MIDI IN. later I figured out the reason, I only can read channels like "ch1n60", instead of channels like "note#60 and velocity 90"; finally I got all my nodes works like this:</li>
+                <div class="images-container">
+                    <video src="td.mp4" controls></video>
+                </div>
+                <li><strong>CHOP - COUNT & EXPRESSION:</strong>Then I tried to connect each line to each key, I can not work with COUNT and EXPRESSION. I spent a couple of hours and I gave up. I went to p5js.</li>
+                <div class="images-container">
+                    <img src="e1.png" alt="image">
+                    <img src="te.png" alt="image">
+                </div>
+            </ul>
+        </div>
+
     </div>
 
     <footer>
