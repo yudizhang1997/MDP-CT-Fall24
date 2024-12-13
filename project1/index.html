@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P1 - Plaid Patterns</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BioRhyme+Expanded:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 200;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 25px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #222;
+            font-family: 'BioRhyme Expanded', serif;
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        h1 + p {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        h3 {
+            color: #901aff;
+            font-family: 'BioRhyme', serif;
+            font-weight: 300;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        h4 {
+            font-family: 'BioRhyme Expanded', serif;
+            font-weight: 300;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: #444;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .designer {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .images-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .images-container img {
+            width: calc(46% - 20px);
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f1f1f1;
+            font-size: 0.9rem;
+            color: #777;
+            border-top: 1px solid #ddd;
+        }
+
+        @media (max-width: 600px) {
+            .images-container img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kludging as a Creative Approach to Technology</h1>
+        <p class="designer">yudi zhang | p5js | project 1 | fall 2024</p>
+
+        <div class="section">
+            <h4>Introduction</h4>
+            <p>I am trying to do some <code>Interactive Visual MIDI Experience.</code></p>
+            <p>This project explores the creative potential of interactive technology by utilizing the <code>Web MIDI API and the p5.js library</code>. Inspired by dynamic audio-visual experiences, the goal was to map MIDI keyboard inputs to colorful 3D visualizations. These interactions create an engaging and immersive experience where sound transforms into vibrant motion.</p>
+            <h4>Inspirations</h4>
+            <p><a href="https://youtu.be/Zx_5ROZm21E?si=YNW8vMEF7L27jFCh" target="_blank">Pianocktail</a></p>
+
+            <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 200;">1st Attempt</h3>
+
+            <h4>Core Parts</h4>
+            <ul>
+                <li><strong>MIDI Keyboard:</strong> Acts as the input device to trigger visual effects.</li>
+                <li><strong>Web MIDI API:</strong> Facilitates communication between the MIDI keyboard and the browser.</li>
+                <li><strong>p5.js Visualization:</strong> Maps MIDI input to 3D animated bars that respond dynamically.</li>
+            </ul>
+
+            <h4>Process Documentation</h4>
+            <p>Started with p5.js and basic MIDI input setup. The initial prototype visualized simple bar animations triggered by MIDI keypresses.</p>
+            <p>Adding bar rotations, height transitions, and color changes based on velocity inputs from the MIDI device.</p>
+            <div class="images-container">
+                <img src="1c.png" alt="image">
+                <img src="2c.png" alt="image">
+                <img src="3c.png" alt="image">
+            </div>               
+
+            <h4>Final Result</h4>
+            <p><a href="https://editor.p5js.org/yudizhang1997/sketches/zQDk-vH10" target="_blank">sketch in p5js</a></p>
+            <div class="images-container">
+                <img src="pv.gif" alt="image">
+                <video src="iv.mp4"></video>
+            </div>               
+
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Yudi Zhang. | Instructed by Maxim | At Media Design Practices</p>
+    </footer>
+</body>
+</html>
