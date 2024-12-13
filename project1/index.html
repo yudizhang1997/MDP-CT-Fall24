@@ -84,7 +84,8 @@
             margin-top: 15px;
         }
 
-        .images-container img {
+        .images-container img,
+        .images-container video {
             width: calc(46% - 20px);
             height: auto;
             border: 1px solid #ddd;
@@ -103,7 +104,8 @@
         }
 
         @media (max-width: 600px) {
-            .images-container img {
+            .images-container img,
+            .images-container video {
                 width: 100%;
             }
         }
@@ -143,7 +145,7 @@
             <p><a href="https://editor.p5js.org/yudizhang1997/sketches/zQDk-vH10" target="_blank">sketch in p5js</a></p>
             <div class="images-container">
                 <img src="pv.gif" alt="image">
-                <video src="iv.mp4"></video>
+                <video src="iv.mp4" controls></video>
             </div>               
 
 
