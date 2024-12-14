@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P4 2024 Fall</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BioRhyme+Expanded:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 200;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 25px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #222;
+            font-family: 'BioRhyme Expanded', serif;
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        h1 + p {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        h2 {
+            color: #222;
+            font-family: 'BioRhyme Expanded', serif;
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        h2 + p {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        h3 {
+            color: #901aff;
+            font-family: 'BioRhyme', serif;
+            font-weight: 300;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        h4 {
+            font-family: 'BioRhyme Expanded', serif;
+            font-weight: 300;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: #444;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .designer {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .divider {
+            border: none;
+            border-top: 2px dashed #901aff;
+            margin: 50px 0; /* 增大了顶部和底部的间隔 */
+        }
+
+        .images-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 15px;
+            margin-bottom: 30px; /* 增加图片下方的间距 */
+        }
+
+        .images-container img,
+        .images-container video {
+            width: calc(46% - 20px);
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f1f1f1;
+            font-size: 0.9rem;
+            color: #777;
+            border-top: 1px solid #ddd;
+        }
+
+        @media (max-width: 600px) {
+            .images-container img,
+            .images-container video {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Text as material and artifact</h1>
+        <h2 style="font-family: 'Montserrat', sans-serif; font-weight: 200;">[work with APIs]</h2>
+        <p class="designer">yudi zhang | PoetryDB API work with Google Cloud Text-to-Speech API | project 4 | fall 2024</p>
+
+        <div class="section">
+            <h4>Introduction</h4>
+            <p>This project is inspired by climate change and the melting of ice caps. I am trying to simulate the monitoring system in nature<code> - record the process of glacier melting.</code></p>
+            <p>[Inspiration]  Glacier Monitoring System</p>
+            <div class="images-container">
+                <img src="gm.jpg" alt="image">
+            </div>     
+            <p>[Visual Reference] <a href="https://conanxin.medium.com/创作的背后-浅谈墨比斯-moebius-漫画创作-1e7706a4acaf" target="_blank">Moebius</a></p>
+            <div class="images-container">
+                <img src="mjg.png" alt="image">
+            </div>             
+            <p>I created a glacier monitoring interface using p5.js. I try to make it visualize the recording of glaciers melting in real-time. Users can adjust the speed and pause the "recording" anytime.</p>
+
+            <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 200;">Work Process</h3>
+
+            <h4>Core Setting & Process</h4>
+            <ul>
+                <li><strong>Draw and color setting - <code>drawPeak function</code>: </strong> In order to give users a sense of real environment, I draw glaciers in multiple layers and use gradient colors. Each layer's color transitions as the melting progresses, reflecting different stages of a day.</li>
+                <div class="images-container">
+                    <img src="dp.png" alt="image">
+                </div>
+                <li><strong>Melting mechanism - <code>meltPeak function</code>: </strong> glaciers will melt as calculated. </li>
+                <div class="images-container">
+                    <img src="mp.png" alt="image">
+                </div>
+                <li><strong>Control buttons - <code>speedbutton & pausebutton</code>: </strong> 5 buttons lets users play in different spped, pause and resume the simulation, mimicking the ability to analyze snapshots of data in real-life monitoring. </li>
+                <div class="images-container">
+                    <img src="cb1.png" alt="image">
+                </div>
+                <li><strong>Small monitoring window - <code>drawMonitor function</code>: </strong> I draw a graphical "monitor" on corner of the interface visualizes the remaining surface area of the glacier, providing an abstracted overview of the simulation's progress.</li>
+                <div class="images-container">
+                    <img src="smw.png" alt="image">
+                </div>
+            </ul>            
+
+            <h4>Final Result</h4>
+            <p><a href="https://editor.p5js.org/yudizhang1997/sketches/sykoxak1Z" target="_blank"> 🔗 sketch in p5js</a></p>
+            <p>Interface snapshot</p>
+            <div class="images-container">
+                <img src="p2.png" alt="image">
+            </div>
+
+            <p>Interface demo video</p>
+            <div class="images-container">
+                <video src="p2v.mp4" controls></video>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Yudi Zhang. | Instructed by Maxim | At Media Design Practices</p>
+    </footer>
+</body>
+</html>
