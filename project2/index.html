@@ -142,7 +142,7 @@
 
         <div class="section">
             <h4>Introduction</h4>
-            <p>I am trying to simulate the monitoring system in nature<code> - record the process of glacier melting.</code></p>
+            <p>This project is inspired by climate change and the melting of ice caps. I am trying to simulate the monitoring system in nature<code> - record the process of glacier melting.</code></p>
             <p>[Inspiration]  Glacier Monitoring System</p>
             <div class="images-container">
                 <img src="gm.jpg" alt="image">
@@ -151,15 +151,28 @@
             <div class="images-container">
                 <img src="mjg.png" alt="image">
             </div>             
-            <p>I want to 。。。。。</p>
+            <p>I created a glacier monitoring interface using p5.js. I try to make it visualize the recording of glaciers melting in real-time. Users can adjust the speed and pause the "recording" anytime.</p>
 
             <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 200;">Work Process</h3>
 
-            <h4>Core Parts</h4>
+            <h4>Core Setting</h4>
             <ul>
-                <li><strong>MIDI Keyboard - YAMAHA P255:</strong> My equipment and it acts as the input device to trigger visual effects.</li>
-                <li><strong>Web MIDI API:</strong> Facilitates communication between the MIDI keyboard and the browser.</li>
-                <li><strong>p5.js Visualization:</strong> Maps MIDI input to 3D animated bars that respond dynamically.</li>
+                <li><strong>Draw and color setting - <code>drawPeak function</code>: </strong> In order to give users a sense of real environment, I draw glaciers in multiple layers and use gradient colors. Each layer's color transitions as the melting progresses, reflecting different stages of a day.</li>
+                <div class="images-container">
+                    <img src="dp.png" alt="image">
+                </div>
+                <li><strong>Melting mechanism - <code>meltPeak function</code>: </strong> glaciers will melt as calculated. </li>
+                <div class="images-container">
+                    <img src="mp.png" alt="image">
+                </div>
+                <li><strong>Control buttons - <code>speedbutton & pausebutton</code>: </strong> 5 buttons lets users play in different spped, pause and resume the simulation, mimicking the ability to analyze snapshots of data in real-life monitoring. </li>
+                <div class="images-container">
+                    <img src="cb1.png" alt="image">
+                </div>
+                <li><strong>Small monitoring window - <code>drawMonitor function</code>: </strong> I draw a graphical "monitor" on corner of the interface visualizes the remaining surface area of the glacier, providing an abstracted overview of the simulation's progress.</li>
+                <div class="images-container">
+                    <img src="smw.png" alt="image">
+                </div>
             </ul>
 
             <h4>Process Documentation</h4>
@@ -170,9 +183,18 @@
             </div>               
 
             <h4>Final Result</h4>
-            <p><a href="https://editor.p5js.org/yudizhang1997/sketches/sykoxak1Z" target="_blank">sketch in p5js</a></p>
+            <p><a href="https://editor.p5js.org/yudizhang1997/sketches/sykoxak1Z" target="_blank"> 🔗 sketch in p5js</a></p>
+            <p>Interface snapshot</p>
             <div class="images-container">
                 <img src="p2.png" alt="image">
+            </div>
+
+            <p>Interface demo video</p>
+            <div class="images-container">
+                <video src="p2v.mp4" controls></video>
+            </div>
+            <p>The documatery style video editing</p>
+            <div class="images-container">
                 <video src="p2v.mp4" controls></video>
             </div>
         </div>
