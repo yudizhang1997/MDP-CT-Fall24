@@ -137,52 +137,52 @@
 <body>
     <div class="container">
         <h1>Text as material and artifact</h1>
-        <h2 style="font-family: 'Montserrat', sans-serif; font-weight: 200;">[work with APIs]</h2>
+        <h2 style="font-family: 'Montserrat', sans-serif; font-weight: 200;">["Read a Poem Before Bed" — An Algorithmic Poetry Generator and Reader]</h2>
         <p class="designer">yudi zhang | PoetryDB API work with Google Cloud Text-to-Speech API | project 4 | fall 2024</p>
 
         <div class="section">
-            <h4>Introduction</h4>
-            <p>This project is inspired by climate change and the melting of ice caps. I am trying to simulate the monitoring system in nature<code> - record the process of glacier melting.</code></p>
-            <p>[Inspiration]  Glacier Monitoring System</p>
-            <div class="images-container">
-                <img src="gm.jpg" alt="image">
-            </div>     
-            <p>[Visual Reference] <a href="https://conanxin.medium.com/创作的背后-浅谈墨比斯-moebius-漫画创作-1e7706a4acaf" target="_blank">Moebius</a></p>
-            <div class="images-container">
-                <img src="mjg.png" alt="image">
-            </div>             
-            <p>I created a glacier monitoring interface using p5.js. I try to make it visualize the recording of glaciers melting in real-time. Users can adjust the speed and pause the "recording" anytime.</p>
-
-            <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 200;">Work Process</h3>
-
-            <h4>Core Setting & Process</h4>
+            <h4>What I Made</h4>
+            <p>I wanted to explore how machines and humans can work together creatively. I created a simple webpage where users can read and listen to poems before bed. The webpage lets users:</p>
             <ul>
-                <li><strong>Draw and color setting - <code>drawPeak function</code>: </strong> In order to give users a sense of real environment, I draw glaciers in multiple layers and use gradient colors. Each layer's color transitions as the melting progresses, reflecting different stages of a day.</li>
-                <div class="images-container">
-                    <img src="dp.png" alt="image">
-                </div>
-                <li><strong>Melting mechanism - <code>meltPeak function</code>: </strong> glaciers will melt as calculated. </li>
-                <div class="images-container">
-                    <img src="mp.png" alt="image">
-                </div>
-                <li><strong>Control buttons - <code>speedbutton & pausebutton</code>: </strong> 5 buttons lets users play in different spped, pause and resume the simulation, mimicking the ability to analyze snapshots of data in real-life monitoring. </li>
-                <div class="images-container">
-                    <img src="cb1.png" alt="image">
-                </div>
-                <li><strong>Small monitoring window - <code>drawMonitor function</code>: </strong> I draw a graphical "monitor" on corner of the interface visualizes the remaining surface area of the glacier, providing an abstracted overview of the simulation's progress.</li>
-                <div class="images-container">
-                    <img src="smw.png" alt="image">
-                </div>
-            </ul>            
+                <li>Generate a random poem.</li>
+                <li>Search for poems using a keyword.</li>
+                <li>Listen to the poem using a text-to-speech feature.</li>
+                <li>Save the poem as a text file.</li>
+            </ul>
+            <p>How I Made It</p>
+            <p>Generating Poems</p>
+            <ul><li>I used the PoetryDB API to fetch poems. Users can type a keyword to find poems related to it, or they can just click a button to generate a random one. I only show the first 5 lines of a poem to keep it short and easy to read.</li>
+            </ul>
+            <p>code that fetches the poems:</p>
+            <p><code>
+                const baseUrl = 'https://poetrydb.org';
+                const apiUrl = keyword ? `${baseUrl}/lines/${keyword}` : `${baseUrl}/random`;
+                
+                const response = await fetch(apiUrl);
+                const poems = await response.json();
+                const filteredPoems = poems.filter(poem =>
+                    poem.lines.some(line => line.toLowerCase().includes(keyword.toLowerCase()))
+                );</code></p>
+            
+            <p>Adding Text-to-Speech</p>
+            <ul><li>I used the Google Cloud Text-to-Speech API to make the poems "speak." When users click the "Read It" button, the tool converts the poem into audio. The audio is then played directly in the browser.</li>
+            </ul>
+            <p>code of how I made it work:</p>
+            <p><code>
+                const requestPayload = {
+                    input: { text: poemText },
+                    voice: { languageCode: 'en-US', ssmlGender: 'NEUTRAL' },
+                    audioConfig: { audioEncoding: 'MP3' }
+                };
+                const audioResponse = await fetch(url, { method: 'POST', body: JSON.stringify(requestPayload) });
+                const audioData = await audioResponse.json();
+                </code></p>
 
-            <h4>Final Result</h4>
-            <p><a href="https://editor.p5js.org/yudizhang1997/sketches/sykoxak1Z" target="_blank"> 🔗 sketch in p5js</a></p>
-            <p>Interface snapshot</p>
-            <div class="images-container">
-                <img src="p2.png" alt="image">
-            </div>
-
-            <p>Interface demo video</p>
+            <p>Adding a Save Option</p>
+            <ul><li>I added a button that lets users save the generated poem as a .txt file. This is done using JavaScript's Blob API.</li>
+            </ul>
+                   
+            <h4>Final demo video</h4>
             <div class="images-container">
                 <video src="p2v.mp4" controls></video>
             </div>
