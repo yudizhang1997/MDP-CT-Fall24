@@ -44,6 +44,14 @@
             color: #555;
         }
 
+        h2 + p {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
         h3 {
             color: #901aff;
             font-family: 'BioRhyme', serif;
@@ -122,7 +130,7 @@
 <body>
     <div class="container">
         <h1>Simulation and Design</h1>
-        <h2 style="font-family: 'Montserrat', sans-serif; font-weight: 200;"><code> [Groupwork with <a href="https://ziruzhao.com/" target="_blank">Holly</a>] </code></h2>
+        <h2 style="font-family: 'Montserrat', sans-serif; font-weight: 200;text-align: center;"> [Group members: Yudi and <a href="https://ziruzhao.com/" target="_blank">Holly</a>]</h2>
         <p class="designer">yudi zhang | Arduino + Adafruit IO Feed | project 3 | fall 2024</p>
 
         <div class="section">
@@ -161,14 +169,21 @@
                 <div class="images-container">
                     <img src="f1.png" alt="image">
                 </div>
-            </ul>            
-            <p>[<code>Core parts</code>]</p> 
+            </ul> 
+            
+            <p>[<code>Communication</code>]</p>  
+            <ul>
+                <li><strong>We envision the impact of human behavior on the creatures in the environment, and the impact of creatures on each other.</strong></li>
+                <li><strong>The pressure sensed by the FPS and touch sensor represents the flow of people in the grove, such as people touching the plants in the environment when passing by; the more people pass by, the more fireflies will be startled (the light range of our prototype: 0-2, representing none, yes, and a lot); the state of the fireflies will also affect the spider's perception of the environment, and then produce corresponding behaviors.</strong></li>
+                <li><strong>In our prototype, the data of these two electronic creatures will be communicated through IO feed.</strong></li>
+            </ul> 
+            <p>[<code>Work steps</code>]</p> 
             <ul>
                 <li><strong>Yudi connects the touch sensor with 2 led lights with 1st ESP32 as module A —— a firefly;</strong></li>
                 <li><strong>Holly connects the fps with the servo with 2nd ESP32 as module B —— a spider;</strong></li>
                 <li><strong>Yudi and Holly create IO feed and testing;</strong></li>
                 <li><strong>After the test was successful, Yudi and Holly created feeds belonging to modules A and B respectively, and tried to make them communicate with each other;</strong></li>
-                <li><strong>With the help of Adam, Yudi and Holly completed the interactive requirements. Here are some records of the production process:</strong></li>
+                <li><strong>With the help of <code>Adam</code>, Yudi and Holly completed the interactive requirements. Here are some records of the production process:</strong></li>
                 <div class="images-container">
                     <img src="adam.jpg" alt="image">
                 </div>
@@ -181,28 +196,32 @@
             <h4>Final Result</h4>
             <p>Scene Snapshot</p>
             <div class="images-container">
-                <img src="p2.png" alt="image">
+                <img src="fs.jpg" alt="image">
             </div>
             <p>demo video</p>
             <div class="images-container">
-                <video src="p2v.mp4" controls></video>
+                <video src="fd.mp4" controls></video>
             </div>
         </div>
 
         <div class="section">
             <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 800;"> * Documentation For Errors and Debugging * </h3>
             <ul>
-                <li><strong><code>Component Selection: </code></strong> We want to show We spent a couple of days to research and imagine different kinds of bugs and their nature habits. and we try diferent knids of sensor to simulate them.</li>
-                <li><strong><code>Logic of : </code></strong> We spent a couple of days to research and imagine different kinds of bugs and their nature habits. and we try diferent knids of sensor to simulate them.</li>
-                <li><strong>CHOP - MIDI IN:</strong> In order to avoid the MATH error, I tried to use MIDI IN. later I figured out the reason, I only can read channels like "ch1n60", instead of channels like "note#60 and velocity 90"; finally I got all my nodes works like this:</li>
-                <div class="images-container">
-                    <video src="td.mp4" controls></video>
-                </div>
-                <li><strong>CHOP - COUNT & EXPRESSION:</strong>Then I tried to connect each line to each key, I can not work with COUNT and EXPRESSION. I spent a couple of hours and I gave up. I went to p5js.</li>
-                <div class="images-container">
-                    <img src="e1.png" alt="image">
-                    <img src="te.png" alt="image">
-                </div>
+                <li><strong><code>Scene & Component Selection: </code></strong> We want to simulate a real environment scene in our prototype. So we spent a couple of days to research and imagine different kinds of bugs and their nature habits. and we try diferent knids of sensor to simulate them. Sensors are work in their own way so we have to find the one which can work as we persue.</li>
+                <li><strong><code>Logic of value detacting: </code></strong> When we are deal with sensors, we figured out the value logic of touch sensor and the servo.</li>
+                <li><strong><code>The debugging process on IO feed:</code></strong></li>
+                <ul>
+                    <li>Our connection and code are good. and both of us had the same error. Then we found that the problem was too many tests and too fast upload rate.</li>
+                    <div class="images-container">
+                        <img src="e1.png" alt="image">
+                        <img src="e11.png" alt="image">
+                    </div>
+                    <li>after fixed, Our adafruit IO can only read 0 value. Then we figured out that we should use analogRead(TOUCH_PIN) instead of digitalRead(TOUCH_PIN), in this way adafruit IO can read the value. </li>
+                    <div class="images-container">
+                        <img src="e2.gif" alt="image">
+                        <img src="e22.png" alt="image">
+                    </div>
+                </ul>
             </ul>
         </div>
 
