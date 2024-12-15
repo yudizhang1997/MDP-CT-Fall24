@@ -44,22 +44,6 @@
             color: #555;
         }
 
-        h2 {
-            color: #222;
-            font-family: 'BioRhyme Expanded', serif;
-            font-weight: 400;
-            text-align: center;
-            margin-bottom: 15px;
-        }
-
-        h2 + p {
-            text-align: center;
-            margin-top: 10px;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            color: #555;
-        }
-
         h3 {
             color: #901aff;
             font-family: 'BioRhyme', serif;
@@ -134,6 +118,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>Simulation and Design</h1>
@@ -143,7 +128,7 @@
         <div class="section">
             <h4>Introduction</h4>
             <p>Our group will build two electronic beings. Each will use sensors to perceive parts of their environment. We will connect them into a network so they can share what they detect and respond to each other.</p>
-            <p>[<code>two electronic beings</code>] a firefly and a spider</p>
+            <p>[<code>two electronic beings</code>] module A: a firefly and Module B: a spider</p>
             <p>[<code>environment setting</code>] summer late night time in the grove</p>
             <p>[<code>thinking on interaction & communication</code>] The nighttime activities of fireflies will be sensed by spiders, and they will take corresponding actions</p>
             <p>[<code>visual referecne</code>]</p>
@@ -168,28 +153,57 @@
             <h4>Setting & Process</h4>
             <p>[<code>Core parts</code>]</p>  
             <ul>
-                <li><strong>ESP32</strong></li>
-                <li><strong>ESP32</strong></li>
-                <li><strong>ESP32</strong></li>
-                <li><strong>ESP32</strong></li>
-                <li><strong>ESP32</strong></li>
+                <li><strong>2 ESP32 for each module</strong></li>
+                <li><strong>touch sensor</strong></li>
+                <li><strong>2 led light</strong></li>
+                <li><strong>flexible pressure sensor (fps)</strong></li>
+                <li><strong>servo</strong></li>
                 <div class="images-container">
-                    <img src="esp.jpg" alt="image">
+                    <img src="f1.png" alt="image">
                 </div>
             </ul>            
-
+            <p>[<code>Core parts</code>]</p> 
+            <ul>
+                <li><strong>Yudi connects the touch sensor with 2 led lights with 1st ESP32 as module A —— a firefly;</strong></li>
+                <li><strong>Holly connects the fps with the servo with 2nd ESP32 as module B —— a spider;</strong></li>
+                <li><strong>Yudi and Holly create IO feed and testing;</strong></li>
+                <li><strong>After the test was successful, Yudi and Holly created feeds belonging to modules A and B respectively, and tried to make them communicate with each other;</strong></li>
+                <li><strong>With the help of Adam, Yudi and Holly completed the interactive requirements. Here are some records of the production process:</strong></li>
+                <div class="images-container">
+                    <img src="adam.jpg" alt="image">
+                </div>
+                <div class="images-container">
+                    <video src="p1.mp4" controls></video>
+                    <video src="p2.mp4" controls></video>
+                </div>
+            </ul>  
 
             <h4>Final Result</h4>
-            <p><a href="https://editor.p5js.org/yudizhang1997/sketches/sykoxak1Z" target="_blank"> 🔗 sketch in p5js</a></p>
-            <p>Interface snapshot</p>
+            <p>Scene Snapshot</p>
             <div class="images-container">
                 <img src="p2.png" alt="image">
             </div>
-
-            <p>Interface demo video</p>
+            <p>demo video</p>
             <div class="images-container">
                 <video src="p2v.mp4" controls></video>
             </div>
+        </div>
+
+        <div class="section">
+            <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 800;"> * Documentation For Errors and Debugging * </h3>
+            <ul>
+                <li><strong><code>Component Selection: </code></strong> We want to show We spent a couple of days to research and imagine different kinds of bugs and their nature habits. and we try diferent knids of sensor to simulate them.</li>
+                <li><strong><code>Logic of : </code></strong> We spent a couple of days to research and imagine different kinds of bugs and their nature habits. and we try diferent knids of sensor to simulate them.</li>
+                <li><strong>CHOP - MIDI IN:</strong> In order to avoid the MATH error, I tried to use MIDI IN. later I figured out the reason, I only can read channels like "ch1n60", instead of channels like "note#60 and velocity 90"; finally I got all my nodes works like this:</li>
+                <div class="images-container">
+                    <video src="td.mp4" controls></video>
+                </div>
+                <li><strong>CHOP - COUNT & EXPRESSION:</strong>Then I tried to connect each line to each key, I can not work with COUNT and EXPRESSION. I spent a couple of hours and I gave up. I went to p5js.</li>
+                <div class="images-container">
+                    <img src="e1.png" alt="image">
+                    <img src="te.png" alt="image">
+                </div>
+            </ul>
         </div>
 
     </div>
