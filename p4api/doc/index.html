@@ -153,30 +153,10 @@
             <p>Generating Poems</p>
             <ul><li>I used the PoetryDB API to fetch poems. Users can type a keyword to find poems related to it, or they can just click a button to generate a random one. I only show the first 5 lines of a poem to keep it short and easy to read.</li>
             </ul>
-            <p>code that fetches the poems:</p>
-            <p><code>
-                const baseUrl = 'https://poetrydb.org';
-                const apiUrl = keyword ? `${baseUrl}/lines/${keyword}` : `${baseUrl}/random`;
-                
-                const response = await fetch(apiUrl);
-                const poems = await response.json();
-                const filteredPoems = poems.filter(poem =>
-                    poem.lines.some(line => line.toLowerCase().includes(keyword.toLowerCase()))
-                );</code></p>
             
             <p>Adding Text-to-Speech</p>
             <ul><li>I used the Google Cloud Text-to-Speech API to make the poems "speak." When users click the "Read It" button, the tool converts the poem into audio. The audio is then played directly in the browser.</li>
             </ul>
-            <p>code of how I made it work:</p>
-            <p><code>
-                const requestPayload = {
-                    input: { text: poemText },
-                    voice: { languageCode: 'en-US', ssmlGender: 'NEUTRAL' },
-                    audioConfig: { audioEncoding: 'MP3' }
-                };
-                const audioResponse = await fetch(url, { method: 'POST', body: JSON.stringify(requestPayload) });
-                const audioData = await audioResponse.json();
-                </code></p>
 
             <p>Adding a Save Option</p>
             <ul><li>I added a button that lets users save the generated poem as a .txt file. This is done using JavaScript's Blob API.</li>
