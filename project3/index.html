@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P3 2024 Fall</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BioRhyme+Expanded:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 200;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 25px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #222;
+            font-family: 'BioRhyme Expanded', serif;
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        h1 + p {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        h2 {
+            color: #222;
+            font-family: 'BioRhyme Expanded', serif;
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        h2 + p {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        h3 {
+            color: #901aff;
+            font-family: 'BioRhyme', serif;
+            font-weight: 300;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        h4 {
+            font-family: 'BioRhyme Expanded', serif;
+            font-weight: 300;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: #444;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .designer {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .divider {
+            border: none;
+            border-top: 2px dashed #901aff;
+            margin: 50px 0; /* 增大了顶部和底部的间隔 */
+        }
+
+        .images-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 15px;
+            margin-bottom: 30px; /* 增加图片下方的间距 */
+        }
+
+        .images-container img,
+        .images-container video {
+            width: calc(46% - 20px);
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f1f1f1;
+            font-size: 0.9rem;
+            color: #777;
+            border-top: 1px solid #ddd;
+        }
+
+        @media (max-width: 600px) {
+            .images-container img,
+            .images-container video {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Simulation and Design</h1>
+        <h2 style="font-family: 'Montserrat', sans-serif; font-weight: 200;"><code> [Groupwork with <a href="https://ziruzhao.com/" target="_blank">Holly</a>] </code></h2>
+        <p class="designer">yudi zhang | Arduino + Adafruit IO Feed | project 3 | fall 2024</p>
+
+        <div class="section">
+            <h4>Introduction</h4>
+            <p>Our group will build two electronic beings. Each will use sensors to perceive parts of their environment. We will connect them into a network so they can share what they detect and respond to each other.</p>
+            <p>[<code>two electronic beings</code>] a firefly and a spider</p>
+            <p>[<code>environment setting</code>] summer late night time in the grove</p>
+            <p>[<code>thinking on interaction & communication</code>] The nighttime activities of fireflies will be sensed by spiders, and they will take corresponding actions</p>
+            <p>[<code>visual referecne</code>]</p>
+            <div class="images-container">
+                <img src="ff.jpg" alt="image">
+                <img src="ss.jpg" alt="image">
+            </div>
+            <p>[<code>imagine the scene</code>]</p>
+                <ul>
+                    <li><strong>On quiet summer nights, people occasionally pass through this grove.</strong></li>
+                    <li><strong>People pass through bushes inhabited by fireflies and plants with spider webs.</strong></li>
+                    <li><strong>Fireflies are triggered by environmental factors and light up their tails;</strong></li>
+                    <li><strong>Spiders are also triggered by environmental factors and move on their webs;</strong></li>
+                </ul>
+            <p>[<code>Concept Map</code>]</p>
+            <div class="images-container">
+                <img src="cm.png" alt="image">
+            </div>             
+
+            <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 200;">Work Process</h3>
+
+            <h4>Setting & Process</h4>
+            <p>[<code>Core parts</code>]</p>  
+            <ul>
+                <li><strong>ESP32</strong></li>
+                <li><strong>ESP32</strong></li>
+                <li><strong>ESP32</strong></li>
+                <li><strong>ESP32</strong></li>
+                <li><strong>ESP32</strong></li>
+                <div class="images-container">
+                    <img src="esp.jpg" alt="image">
+                </div>
+            </ul>            
+
+
+            <h4>Final Result</h4>
+            <p><a href="https://editor.p5js.org/yudizhang1997/sketches/sykoxak1Z" target="_blank"> 🔗 sketch in p5js</a></p>
+            <p>Interface snapshot</p>
+            <div class="images-container">
+                <img src="p2.png" alt="image">
+            </div>
+
+            <p>Interface demo video</p>
+            <div class="images-container">
+                <video src="p2v.mp4" controls></video>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Yudi Zhang. | Instructed by Maxim | At Media Design Practices</p>
+    </footer>
+</body>
+</html>
